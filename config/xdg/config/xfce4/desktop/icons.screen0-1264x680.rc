@@ -1,6 +1,10 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[/home/app/Desktop/Install_SOFTWARE]
+row=4
+col=0
+
 [cdrom]
 row=0
 col=0
