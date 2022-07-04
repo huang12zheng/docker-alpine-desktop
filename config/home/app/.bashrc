@@ -89,4 +89,8 @@ fi
 # sources /etc/bash.bashrc).
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
-#fi
+#fi. /home/app/.nix-profile/etc/profile.d/nix.sh
+export USER=`id -u -n`
+if ! . /home/app/.nix-profile/etc/profile.d/nix.sh; then
+    echo "nix don't install"
+fi

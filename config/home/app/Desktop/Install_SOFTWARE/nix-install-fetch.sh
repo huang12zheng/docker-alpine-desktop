@@ -12,11 +12,13 @@ oops() {
 
 umask 0022
 
+# 使用/tmp目录来存放不需要永久保留的文件
 tmpDir="$(mktemp -d -t nix-binary-tarball-unpack.XXXXXXXXXX || \
           oops "Can't create temporary directory for downloading the Nix binary tarball")"
 cleanup() {
     rm -rf "$tmpDir"
 }
+# trap "commands" signals #接收到signals指定的信号时，执行commands命令。
 trap cleanup EXIT INT QUIT TERM
 
 require_util() {
@@ -110,10 +112,10 @@ unpack=$tmpDir/unpack
 mkdir -p "$unpack"
 tar -xJf "$tarball" -C "$unpack" || oops "failed to unpack '$url'"
 
-script=$(echo "$unpack"/*/install)
+# script=$(echo "$unpack"/*/install)
 
-[ -e "$script" ] || oops "installation script is missing from the binary tarball!"
-export INVOKED_FROM_INSTALL_IN=1
-"$script" "$@"
+# [ -e "$script" ] || oops "installation script is missing from the binary tarball!"
+# export INVOKED_FROM_INSTALL_IN=1
+# "$script" "$@"
 
 } # End of wrapping

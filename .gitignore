@@ -2,3 +2,6 @@ config/log/nginx/access.log
 config/home/app/.dbus/session-bus/74f57018f3bcc0774f2251e3606c39d2-0
 config/xdg/config/**/accels.scm
 config/home/app/.viminfo
+config/xdg/config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
+config/xdg/config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+config/xdg/config/xfce4/desktop/icons.screen.latest.rc
